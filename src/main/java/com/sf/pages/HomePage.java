@@ -33,6 +33,9 @@ public class HomePage {
 
     @FindBy(id = "mens-accessories-ties")
     WebElement mensClothingTiesNavLink;
+
+    @FindBy(id = "mens-accessories-gloves")
+    WebElement mensClothingGlovesNavLink;
     public HomePage(WebDriver driver){
         this.driver=driver;
         wait = new WebDriverWait(driver, Constants.EXPLICIT_WAIT);
@@ -75,6 +78,12 @@ public class HomePage {
     public ProductListPage navigateToTies(){
         wait.until(visibilityOf(mensClothingTiesNavLink));
         actions.click(mensClothingTiesNavLink).build().perform();
+        return new ProductListPage(driver);
+    }
+
+    public ProductListPage navigateToGloves(){
+        wait.until(visibilityOf(mensClothingGlovesNavLink));
+        actions.click(mensClothingGlovesNavLink).build().perform();
         return new ProductListPage(driver);
     }
 }

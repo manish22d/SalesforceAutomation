@@ -43,6 +43,7 @@ public class TestListener implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult iTestResult) {
+
 		try {
 			if (this.webDriver != null) {
 				// this.sendStatus(iTestResult,"FAIL");
